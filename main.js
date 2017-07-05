@@ -8,6 +8,7 @@ var start_and_finish_time = function(start_time, finish_time) {
   var finish = new Date(finish_time);
   var difference = finish.getTime() - start.getTime();
   var duration = Math.round(difference / 60000);
+  console.log(duration);
   return duration;
 };
 
