@@ -29,25 +29,21 @@ var timer = function(lights_color, background_color, minutes) {
 // This function determines the light timing and colour selection for the e_w lights.
 var e_w = function() {
   timer("ew_green", "green", 0);
-  timer("ew_green", "white", 4.5);
-  timer("ew_yellow", "yellow", 4.5);
-  timer("ew_yellow", "white", 5);
-  timer("ew_red", "red", 5);
-  timer("ew_red", "white", 9.5);
-  timer("ew_yellow", "yellow", 9.5);
-  timer("ew_yellow", "white", 10);
+  timer("ew_green", "white", 0.45);
+  timer("ew_yellow", "yellow", 0.45);
+  timer("ew_yellow", "white", 0.5);
+  timer("ew_red", "red", 0.5);
+  timer("ew_red", "white", 1.0);
 };
 
 // This function determines the light timing and colour selection for the n_s lights.
 var n_s = function() {
   timer("ns_red", "red", 0);
-  timer("ns_red", "white", 4.5);
-  timer("ns_yellow", "yellow", 4.5);
-  timer("ns_yellow", "white", 5);
-  timer("ns_green", "green", 5);
-  timer("ns_green", "white", 9.5);
-  timer("ns_yellow", "yellow", 9.5);
-  timer("ns_yellow", "white", 10);
+  timer("ns_red", "white", 0.5);
+  timer("ns_green", "green", 0.5);
+  timer("ns_green", "white", 0.95);
+  timer("ns_yellow", "yellow", 0.95);
+  timer("ns_yellow", "white", 1.0);
 };
 
 // This function groups both light sets.
@@ -61,7 +57,7 @@ var run_lights = function(start_time, finish_time) {
   both_lights();
   setInterval(function() {
     both_lights();
-  }, time_conversion(10));
+  }, time_conversion(1));
   setTimeout(function() {
     clearInterval(both_lights);
   }, time_conversion(start_and_finish_time(start_time, finish_time)));
