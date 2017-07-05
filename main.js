@@ -1,20 +1,19 @@
-var access_light = function(lights_color, background_color) {
-  var light = document.getElementById(lights_color);
-  light.style.backgroundColor = background_color;
-};
-
 var start_and_finish_time = function(start_time, finish_time) {
   var start = new Date(start_time);
   var finish = new Date(finish_time);
   var difference = finish.getTime() - start.getTime();
   var duration = Math.round(difference / 60000);
-  console.log(duration);
   return duration;
 };
 
 var time_conversion = function(minutes) {
   var new_time = minutes * 60000;
   return new_time;
+};
+
+var access_light = function(lights_color, background_color) {
+  var light = document.getElementById(lights_color);
+  light.style.backgroundColor = background_color;
 };
 
 var timer = function(lights_color, background_color, minutes) {
