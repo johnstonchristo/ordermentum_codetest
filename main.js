@@ -70,4 +70,4 @@ var run_lights = function(start_time, finish_time) {
   }, time_conversion(start_and_finish_time(start_time, finish_time)));
 };
 
-run_lights("January 1, 2017 9:30:00", "January 1, 2017 10:00:00");
+run_lights("July 6, 2017 9:30:00", "July 6, 2017 10:00:00");
