@@ -29,22 +29,29 @@ var timer = function(lights_color, background_color, minutes) {
 // This function determines the light timing and colour selection for the e_w lights.
 var e_w = function() {
   timer("ew_green", "green", 0);
-  timer("ew_green", "white", 0.45);
-  timer("ew_yellow", "yellow", 0.45);
-  timer("ew_yellow", "white", 0.5);
-  timer("ew_red", "red", 0.5);
-  timer("ew_red", "white", 1.0);
+  timer("ew_green", "white", 4.5);
+  timer("ew_yellow", "yellow", 4.5);
+  timer("ew_yellow", "white", 5);
+  timer("ew_red", "red", 5);
+  timer("ew_red", "white", 9.5);
+  timer("ew_yellow", "yellow", 9.5);
+  timer("ew_yellow", "white", 10);
 };
 
 // This function determines the light timing and colour selection for the n_s lights.
 var n_s = function() {
   timer("ns_red", "red", 0);
-  timer("ns_red", "white", 0.5);
-  timer("ns_green", "green", 0.5);
-  timer("ns_green", "white", 0.95);
-  timer("ns_yellow", "yellow", 0.95);
-  timer("ns_yellow", "white", 1.0);
+  timer("ns_red", "white", 4.5);
+  timer("ns_yellow", "yellow", 4.5);
+  timer("ns_yellow", "white", 5);
+  timer("ns_green", "green", 5);
+  timer("ns_green", "white", 9.5);
+  timer("ns_yellow", "yellow", 9.5);
+  timer("ns_yellow", "white", 10);
 };
+
+// This is the length of time in minutes that each light cycle takes.
+var run_time = 10;
 
 // This function groups both light sets.
 var both_lights = function() {
@@ -52,12 +59,12 @@ var both_lights = function() {
   n_s();
 };
 
-// This function runs the lights between a start and finish time.
+// This function runs the lights based on a start and finish time.
 var run_lights = function(start_time, finish_time) {
   both_lights();
   setInterval(function() {
     both_lights();
-  }, time_conversion(1));
+  }, time_conversion(run_time));
   setTimeout(function() {
     clearInterval(both_lights);
   }, time_conversion(start_and_finish_time(start_time, finish_time)));
